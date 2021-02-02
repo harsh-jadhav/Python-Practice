@@ -15,12 +15,14 @@ n = len(arr)
 start = 0
 end = n-1
 
-for i in range(n):
-	if start<end:	
-		arr[start], arr[end] = arr[end], arr[start]
-		start = start + 1
-		end = end - 1
+def reverse_iterative(array, start, end)
+	for i in range(n):
+		if start<end:	
+			array[start], array[end] = array[end], array[start]
+			start = start + 1
+			end = end - 1
 
+reverse_iterative(arr, start, end)
 print('Iterative Way: ',arr)
 
 # 2. Recursive Way : # Time Complexity : O(n)
@@ -29,14 +31,17 @@ arr = [5,4,3,2,1]
 start = 0
 end = len(arr) - 1
 
-def reverse_it(array, start, end):
-	if start >= end:
-		return
-	array[start], array[end] = array[end], array[start]
-	reverse_it(array,start+1,end-1)
+def reverse_recursive(array, start, end):
+	#if start >= end:
+		#return
+	#array[start], array[end] = array[end], array[start]
+	#reverse_it(array,start+1,end-1)
+	if start < end:
+		array[start], array[end] = array[end], array[start]
+		reverse_recursive(array,start+1,end-1)
 
 
-reverse_it(arr, start, end)
+reverse_recursive(arr, start, end)
 
 print("Recursive Way: ",arr)
 
