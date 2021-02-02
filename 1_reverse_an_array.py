@@ -15,7 +15,7 @@ n = len(arr)
 start = 0
 end = n-1
 
-def reverse_iterative(array, start, end)
+def reverse_iterative(array, start, end):
 	for i in range(n):
 		if start<end:	
 			array[start], array[end] = array[end], array[start]
